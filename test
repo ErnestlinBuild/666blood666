@@ -1,2 +1,7 @@
-BloodKey = "AV12112021HackeoddyrHockeyAV12112021"
-BloodKey = "testing"
+if BloodKey == "oddy" then
+BloodKey = "oddy"
+end
+
+if BloodKey == "oddy1" then
+BloodKey = "oddy1"
+end
