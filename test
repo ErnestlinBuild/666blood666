@@ -1,7 +1,7 @@
-if BloodKey == "oddy" then
+if _G.BloodKey == "oddy" then
 BloodKey = "oddy"
 end
 
-if BloodKey == "oddy1" then
+if _G.BloodKey == "oddy1" then
 BloodKey = "oddy1"
 end
