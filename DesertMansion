@@ -1,5 +1,5 @@
 -- Set Player Name Below:
-local PlayerName = _G.Plr_2b
+local PlayerName = "Bloododdy2021"
 
 -- Script:
 local Tag
@@ -3055,10 +3055,9 @@ Sbp('Floor2Large',Tag*Ang(-0, 0, -3.1415927410125732) + Vec(-34, 0.2000000029802
 Sbp('Floor2Large',Tag*Ang(-0, 0, -3.1415927410125732) + Vec(-34, 0.20000000298023224, 7), Plr)
 Sbp('Floor2Large',Tag*Ang(-0, 0, -3.1415927410125732) + Vec(-6, 0.20000000298023224, 47), Plr)
 Sbp('Floor2Large',Tag*Ang(-0, 0, -3.1415927410125732) + Vec(-2, 0.20000000298023224, -1), Plr)
-Sbp('Refridgerator',Tag*Ang(-0, -1.5707963705062866, 0) + Vec(-96.9000244140625, 0.4000000059604645, -30), Plr)
 Sbp('CounterTop1',Tag*Ang(0, 1.5707963705062866, 0) + Vec(71, 8.199999809265137, 43), Plr)
 Sbp('CounterTop1',Tag*Ang(0, 1.5707963705062866, 0) + Vec(67, 8.199999809265137, 43), Plr)
-wait(1.2607142857142857)SetBp("Ghost", 73)
+wait(1.2607142857142857)SetBp("Ghost", 72)
 
 Sbp('Wall2Tall',Tag*Ang(1.5707963705062866, 0, 1.5707963705062866) + Vec(94.9000244140625, 23.600000381469727, 45), Plr)
 Sbp('Wall2Tall',Tag*Ang(1.5707963705062866, 1.5707963705062866, 0) + Vec(-97.5, 14.100030899047852, -23.899993896484375), Plr)
