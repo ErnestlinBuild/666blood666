@@ -1,4 +1,4 @@
-_-- Set Player Name Below:
+-- Set Player Name Below:
 local PlayerName = _G.Plr_2b
 
 -- Script:
