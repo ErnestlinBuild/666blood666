@@ -1,5 +1,5 @@
 -- Set Player Name Below:
-local PlayerName = "Bloododdy2021"
+local PlayerName = _G.Plr_2b
 
 -- Script:
 local Tag
