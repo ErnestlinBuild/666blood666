@@ -1,75 +1,4 @@
-
--- Set Player Name Below:
-local PlayerName = _G.Plr_2b
-
--- Script:
-local Tag
-for i,v in pairs(Workspace.Properties:GetChildren()) do
-if v.Owner.Value == game.Players[PlayerName] then
-Tag = v.OriginSquare.CFrame
-end
-end
-
-local ItsCFrame
-local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
-for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
-if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
-if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
-if v:FindFirstChild("MainCFrame") then
-else
-ItsCFrame = v.PrimaryPart.CFrame
-end
-if v ~= nil then
-Remote:FireServer(v.Name, ItsCFrame, game.Players.LocalPlayer, "", v, false)
-end
-end
-end
-end
-
-local Vec = Vector3.new
-local Ang = CFrame.Angles
-local Plr = game.Players.LocalPlayer
-function SetBp(WT, Count)
-local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
-repeat
-wait(2)
-game:GetService("RunService").RenderStepped:wait(0.3)
-local ItsCFrame = 0
-for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
-if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
-if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
-if v:FindFirstChild("MainCFrame") then
-else
-ItsCFrame = ItsCFrame  + 1
-end
-end
-end
-end
-until ItsCFrame == Count
-local ItsCFrame
-local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
-for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
-if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
-if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
-if v:FindFirstChild("MainCFrame") then
-ItsCFrame = v.MainCFrame.Value
-else
-ItsCFrame = v.PrimaryPart.CFrame
-end
-if v ~= nil then
-Remote:FireServer(v.Name, ItsCFrame, game.Players.LocalPlayer, WT, v, false)
-end
-end
-end
-end
-end
-
-function Sbp(A_1, A_2, A_3)
-game.ReplicatedStorage.PlaceStructure.ClientPlacedBlueprint:FireServer(A_1, A_2, A_3)
-if (math.random(1,20) == 1) then
-game:GetService("RunService").RenderStepped:wait()
-end
-end
+_G.Text = [[
 Sbp('Wall2Tall',Tag*Ang(-0, -0, -1.5707963705062866) + Vec(-7.900001525878906, 12.100000381469727, 37.5), Plr)
 Sbp('Wall2Tall',Tag*Ang(-0, -1.5707963705062866, 0) + Vec(92.5, 32.20000076293945, 80), Plr)
 Sbp('Wall2Tall',Tag*Ang(-0, -1.5707963705062866, 0) + Vec(93.5, 24.200000762939453, 80), Plr)
@@ -4453,7 +4382,7 @@ Sbp('Floor2Tiny',Tag*Ang(1.5707963705062866, 1.5707963705062866, 0) + Vec(-1.5, 
 Sbp('Floor2Tiny',Tag*Ang(-3.1415927410125732, -1.5707963705062866, 0) + Vec(38.5, 7.799999237060547, -94.5), Plr)
 Sbp('Floor2Tiny',Tag*Ang(1.5707963705062866, 1.5707963705062866, 0) + Vec(-2.5, 9, 48.0999755859375), Plr)
 Sbp('Floor2Tiny',Tag*Ang(-3.1415927410125732, -1.5707963705062866, 0) + Vec(38.5, 7.399999618530273, -94.5), Plr)
-wait(1.1857142857142857)SetBp("SweetBlue", 52)
+wait(1.1857142857142857)SetBp("CaveCrawler", 52)
 
 Sbp('Floor1Large',Tag*Ang(1.5707963705062866, 0, -0) + Vec(58, 5.100000381469727, -16.899993896484375), Plr)
 Sbp('Floor1Large',Tag*Ang(-0, 0, -3.1415927410125732) + Vec(58, 1, -12), Plr)
@@ -4883,3 +4812,5 @@ Sbp('Wedge8_Thin',Tag*Ang(-1.5707963705062866, 0, -3.1415927410125732) + Vec(60,
 Sbp('Wedge8_Thin',Tag*Ang(1.5707963705062866, 0, 1.5707963705062866) + Vec(-13.099998474121094, 0.5999927520751953, -99), Plr)
 Sbp('Wedge8_Thin',Tag*Ang(1.5707963705062866, 0, -0) + Vec(-14, 0.6000003814697266, -73.89999389648438), Plr)
 wait(2.007142857142857)SetBp(Nil , 282)
+]]
+return _G.Text
