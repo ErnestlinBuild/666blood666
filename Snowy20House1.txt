@@ -1,75 +1,4 @@
-
--- Set Player Name Below:
-local PlayerName = _G.Plr_2b
-
--- Script:
-local Tag
-for i,v in pairs(Workspace.Properties:GetChildren()) do
-if v.Owner.Value == game.Players[PlayerName] then
-Tag = v.OriginSquare.CFrame
-end
-end
-
-local ItsCFrame
-local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
-for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
-if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
-if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
-if v:FindFirstChild("MainCFrame") then
-else
-ItsCFrame = v.PrimaryPart.CFrame
-end
-if v ~= nil then
-Remote:FireServer(v.Name, ItsCFrame, game.Players.LocalPlayer, "", v, false)
-end
-end
-end
-end
-
-local Vec = Vector3.new
-local Ang = CFrame.Angles
-local Plr = game.Players.LocalPlayer
-function SetBp(WT, Count)
-local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
-repeat
-wait(2)
-game:GetService("RunService").RenderStepped:wait(0.3)
-local ItsCFrame = 0
-for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
-if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
-if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
-if v:FindFirstChild("MainCFrame") then
-else
-ItsCFrame = ItsCFrame  + 1
-end
-end
-end
-end
-until ItsCFrame == Count
-local ItsCFrame
-local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
-for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
-if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
-if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
-if v:FindFirstChild("MainCFrame") then
-ItsCFrame = v.MainCFrame.Value
-else
-ItsCFrame = v.PrimaryPart.CFrame
-end
-if v ~= nil then
-Remote:FireServer(v.Name, ItsCFrame, game.Players.LocalPlayer, WT, v, false)
-end
-end
-end
-end
-end
-
-function Sbp(A_1, A_2, A_3)
-game.ReplicatedStorage.PlaceStructure.ClientPlacedBlueprint:FireServer(A_1, A_2, A_3)
-if (math.random(1,20) == 1) then
-game:GetService("RunService").RenderStepped:wait()
-end
-end
+_G.Text = [[
 Sbp('Wall2Tall',Tag*Ang(1.5707963705062866, -0, -3.1415927410125732) + Vec(-40, 12.600000381469727, 43.899993896484375), Plr)
 Sbp('Wall2Tall',Tag*Ang(1.5707963705062866, 0, -0) + Vec(-83, 47.600006103515625, -14.899993896484375), Plr)
 Sbp('Wall2Tall',Tag*Ang(1.5707963705062866, -0, -3.1415927410125732) + Vec(-83, 30.599998474121094, -47.100006103515625), Plr)
@@ -2028,3 +1957,5 @@ Sbp('Stair1',Tag*Ang(-0, 0, -0) + Vec(-58, 0.20000076293945312, -7), Plr)
 Sbp('Stair1',Tag*Ang(-0, 0, -0) + Vec(-75, 0.20000076293945312, -27), Plr)
 Sbp('Floor1Tiny',Tag*Ang(1.5707963705062866, 0, -0) + Vec(-96.5, 8.600000381469727, 40.100006103515625), Plr)
 Sbp('Floor1Tiny',Tag*Ang(1.5707963705062866, 0, -0) + Vec(-95.5, 8.600000381469727, 40.100006103515625), Plr)
+]]
+return _G.Text
