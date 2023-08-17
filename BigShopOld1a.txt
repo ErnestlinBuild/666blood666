@@ -2939,6 +2939,6 @@ Sbp('Wedge4',Tag*Ang(-0, 0, -3.1415927410125732) + Vec(30, 1, -74), Plr)
 wait(2.5821428571428573)SetBp("SpookyNeon", 437)
 
 Sbp('Floor1Tiny',Tag*Ang(-0, -1.5707963705062866, 0) + Vec(62.5, 30.200000762939453, -39.5), Plr)
-wait(1.0035714285714286)SetBp(Nil, 1)
+wait(1.0035714285714286)SetBp("Grey", 1)
 ]]
 return _G.Text
